@@ -1,0 +1,12 @@
+{% load static %}
+<html>
+<header>
+    <link rel="stylesheet" type="text/css" href={% static 'css/blog.css' %}>
+    <ul>
+        <li><a href="/blog/list/">Home</a></li>
+        <li><a href="/blog/create/">Create Post!</a></li>
+    </ul>
+</header>
+
+{% block content %}
+{% endblock %}
