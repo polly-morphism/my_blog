@@ -5,8 +5,12 @@
 <h1>Detail</h1>
 
 {% block content %}
-    <h1>{{ object.title }}</h1>
-    <p>{{ object.text }}</p>
+<div class="container">
+    <div class="post-conteiner-line">
+        <div class="post-container-header">{{object.title}}</div>
+        <div class="post-container-content">{{object.content}}</div>
+    </div>
+</div>
 {% endblock %}
 </body>
 </html>

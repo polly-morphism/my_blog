@@ -5,11 +5,14 @@
 <h1>List</h1>
 
 {% block content %}
-    {% for blog in object_list %}
-    <ul>
-        <li>{{blog.title}}, {{blog.content}}</li>
-    </ul>
-    {% endfor %}
+    <div class="container">
+        {% for blog in object_list %}
+        <div class="post-conteiner-line">
+            <div class="post-container-header"><a href="/blog/{{blog.slug}}/">{{blog.title}}</a></div>
+            <div class="post-container-content">{{blog.content}}</div>
+        </div>
+        {% endfor %}
+    </div>
 {% endblock %}
 </body>
 </html>
