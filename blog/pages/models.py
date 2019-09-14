@@ -2,6 +2,7 @@ from django.db import models
 from django.template.defaultfilters import slugify
 import transliterate
 from datetime import datetime
+import time
 
 class BlogPost(models.Model):
     title = models.CharField(unique=True, max_length=128)
@@ -10,6 +11,7 @@ class BlogPost(models.Model):
     created_at = models.DateTimeField(default=datetime.now, blank=True)
 
     def save(self, *args, **kwargs):
+        self.created_at = str(datetime.now())
         if not self.id:
             self.slug = slugify(self.title)
             if self.slug == "":

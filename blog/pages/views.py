@@ -14,7 +14,7 @@ from .serializers import BlogPostSerializer
 
 class BlogPostListREST(APIView):
     """
-    List all posts, or create a new post.
+    REST List all posts, or create a new post.
     """
     def get(self, request, format=None):
         blogposts = BlogPost.objects.all()
@@ -31,7 +31,7 @@ class BlogPostListREST(APIView):
 
 class BlogPostDetailREST(APIView):
     """
-    Retrieve, update or delete a blog post instance.
+    REST Retrieve, update or delete a blog post instance.
     """
     def get_object(self, pk):
         try:
@@ -60,6 +60,9 @@ class BlogPostDetailREST(APIView):
 
 
 class BlogPostList(ListView):
+    """
+    List all blog posts with generic views
+    """
     model = BlogPost
     template_name = "blogpost_list.html"
 
@@ -68,6 +71,9 @@ class BlogPostList(ListView):
         return qs
 
 class BlogPostCreate(CreateView):
+    """
+    Create a blog post with generic views
+    """
     model = BlogPost
     form_class = BlogPostForm
     template_name = "blogpost_create.html"
@@ -77,6 +83,9 @@ class BlogPostCreate(CreateView):
 
 
 class BlogPostRetrieve(DetailView):
+    """
+    Get/Retrieve post
+    """
     model = BlogPost
     template_name = "blogpost_retrieve.html"
 
@@ -86,7 +95,7 @@ class BlogPostRetrieve(DetailView):
 
 class BlogPostUpdate(UpdateView):
     """
-    Изменение информации о пользователе
+    Update and change post
     """
     model = BlogPost
     template_name = "blogpost_update.html"
@@ -102,7 +111,7 @@ class BlogPostUpdate(UpdateView):
 
 class BlogPostDelete(DeleteView):
     """
-    Удаление пользователя из системы
+    Delete post
     """
     model = BlogPost
     template_name = "blogpost_delete.html"
