@@ -4,14 +4,14 @@
 
 {% block content %}
 
-<form class="form-class" action="/blog/create/" method="post">
+<form class="form-class" method="post">
     {% csrf_token %}
     <div class="input-blog">
         Title: {{ form.title }}
         Text: {{ form.content }}
         <!-- Slug: {{ form.slug }} -->
     </div>
-    <input class="button-class" type="submit" value="Submit">
+    <input class="button-class" type="submit" value="Save">
 </form>
 {% endblock %}
 

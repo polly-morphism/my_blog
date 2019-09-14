@@ -1,15 +1,16 @@
+/* Impact, fantasy */
+
 :root {
   --primary   : #eceff1;
   --p-light   : #ffffff;
   --p-dark    : #babdbe;
-  --secondary : #6100bc;
-  --s-light   : #9741f0;
-  --s-lark    : #24008a;
+  --secondary : #ff5722;
+  --s-light   : #ff8a50;
 }
 
 body {
-  margin-top: 60px;
-  margin-left: 0px;
+  margin-top       : 130px;
+  margin-left      : 0px;
   background-color : var(--primary);
   font             : 20px Courier New;
 }
@@ -19,22 +20,29 @@ head {
 }
 
 h1 {
-  font : 30px Courier New;
-  margin-left: 10%;
+  margin-top       : 5px;
+  margin-bottom    : 0px;
+  color            : var(--secondary);
+  background-color : var(--p-light);
+  text-align       : center;
+  font-weight      : 300;
 }
-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
 
+header {
+  position         : fixed;
+  top              : 0;
+  width            : 100%;
+  background-color : var(--p-light);
+  box-shadow       : 10px 10px 15px #cccccc;
 }
+
 header ul {
   margin           : 0;
   padding          : 0;
-  padding-left: 10%;
+  padding-left     : 10%;
   overflow         : hidden;
   border-radius    : 2px;
-  background-color : var(--p-dark);
+  background-color : var(--p-light);
   font             : 20px Courier New;
   list-style-type  : none;
 }
@@ -50,7 +58,7 @@ header li {
 header li a {
   display         : block;
   padding         : 14px 16px;
-  color           : white;
+  color           : var(--s-light);
   text-align      : center;
   text-decoration : none;
 }
@@ -70,7 +78,16 @@ header li a:hover {
   border           : none;
   border-radius    : 2px;
   background-color : var(--s-light);
+  box-shadow       : 10px 10px 15px #cccccc;
   font-size        : 20px;
+  display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.button-class a {
+  color           : #ffff;
+  text-decoration : none;
 }
 
 .button-class:hover {
@@ -78,21 +95,32 @@ header li a:hover {
   background-color : var(--secondary);
 }
 
+.buttons-align {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+}
+
+.button-danger {
+    background-color: var(--secondary);
+}
+
 .form-class {
-    margin-left: 10%;
   display        : flex;
+  margin-left    : 10%;
   flex-direction : column;
 }
 
 .input-blog {
-  display          : flex;
-  width            : 50%;
-  margin           : 15px;
-  padding          : 15px;
-  border           : none;
-  border-radius    : 2px;
-  background:linear-gradient(180deg, var(--p-dark) 40%, var(--primary));
-  flex-direction   : column;
+  display        : flex;
+  width          : 50%;
+  margin         : 15px;
+  padding        : 15px;
+  border         : none;
+  border-radius  : 2px;
+  background     : var(--s-light);
+  box-shadow     : 10px 10px 15px #cccccc;
+  flex-direction : column;
 }
 
 .input-blog input,
@@ -112,23 +140,30 @@ textarea {
 }
 
 .post-container-header {
-    margin: 15px 15px 0px 15px;
-    padding          : 15px;
-    border-top-left-radius: 2px;
-    border-top-right-radius: 2px;
-    color: var(--p-light);
-    background-color : var(--s-light);
-    /* background:linear-gradient(180deg, var(--s-light) 1%, var(--p-light)); */
+  margin                  : 15px 15px 0px 15px;
+  padding                 : 15px;
+  color                   : var(--p-light);
+  border-top-left-radius  : 2px;
+  border-top-right-radius : 2px;
+  background-color        : var(--s-light);
+  box-shadow              : 10px 10px 15px #cccccc;
+  /* background:linear-gradient(180deg, var(--s-light) 1%, var(--p-light)); */
 }
 
 .post-container-header a {
-    color: var(--p-light);
-    text-decoration: none;
+  color           : var(--p-light);
+  text-decoration : none;
 }
+
 .post-container-content {
-    margin: 0px 15px 15px 15px;
-    padding          : 15px;
-    /* border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px; */
-    background:linear-gradient(180deg, var(--p-light) 80%, var(--primary));
+  margin     : 0px 15px 15px 15px;
+  padding    : 15px;
+  background : var(--p-light);
+  box-shadow : 10px 10px 15px #cccccc;
+  /* border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; */
+}
+
+.post-date {
+  text-align : right;
+  font-size  : 15px;
 }

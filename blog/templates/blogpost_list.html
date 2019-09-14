@@ -9,7 +9,12 @@
         {% for blog in object_list %}
         <div class="post-conteiner-line">
             <div class="post-container-header"><a href="/blog/{{blog.slug}}/">{{blog.title}}</a></div>
-            <div class="post-container-content">{{blog.content}}</div>
+            <div class="post-container-content">
+                {{blog.content}}
+                <div class="post-date">
+                    {{blog.created_at}}
+                </div>
+            </div>
         </div>
         {% endfor %}
     </div>

@@ -9,6 +9,10 @@
     <div class="post-conteiner-line">
         <div class="post-container-header">{{object.title}}</div>
         <div class="post-container-content">{{object.content}}</div>
+        <div class="buttons-align">
+            <div class="button-class"><a href="/blog/{{object.slug}}/update/">Update</a></div>
+            <div class="button-class button-danger"><a href="/blog/{{object.slug}}/delete/">Delete</a></div>
+        </div>
     </div>
 </div>
 {% endblock %}
