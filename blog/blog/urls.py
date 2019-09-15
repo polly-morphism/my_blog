@@ -24,4 +24,6 @@ urlpatterns = [
     re_path(r'^api-auth/', include('rest_framework.urls')),
     path('blogposts/', views.BlogPostListREST.as_view()),
     path('blogposts/<int:pk>/', views.BlogPostDetailREST.as_view()),
+
+    path('', include('frontend.urls')),
 ]
