@@ -1,0 +1,174 @@
+/* Impact, fantasy */
+
+:root {
+  --primary   : #eceff1;
+  --p-light   : #ffffff;
+  --p-dark    : #babdbe;
+  --secondary : #ff5722;
+  --s-light   : #ff8a50;
+}
+
+body > div {
+  margin-top       : 102px;
+  margin-left      : 0px;
+  background-color : var(--primary);
+  font             : 20px Courier New;
+}
+
+head {
+  font : 30px Courier New;
+}
+
+header > h1 {
+  font-size : 40px;
+}
+
+h1 {
+  margin-top       : 5px;
+  margin-bottom    : 0px;
+  color            : var(--secondary);
+  background-color : var(--p-light);
+  text-align       : center;
+  font-weight      : 300;
+}
+
+header {
+  position         : fixed;
+  top              : 0;
+  width            : 100%;
+  height           : 102px;
+  background-color : var(--p-light);
+  box-shadow       : 10px 10px 15px #cccccc;
+}
+
+header ul {
+  margin           : 0;
+  padding          : 0;
+  padding-left     : 10%;
+  overflow         : hidden;
+  border-radius    : 2px;
+  background-color : var(--p-light);
+  font             : 20px Courier New;
+  list-style-type  : none;
+}
+
+p {
+  font : 20px Courier New;
+}
+
+header li {
+  float : left;
+}
+
+header li a {
+  display         : block;
+  padding         : 14px 16px;
+  color           : var(--s-light);
+  text-align      : center;
+  text-decoration : none;
+}
+
+/* Change the link color to #111 (black) on hover */
+
+header li a:hover {
+  color            : #ffff;
+  background-color : var(--secondary);
+}
+
+.button-class {
+  display          : flex;
+  width            : 100px;
+  height           : 40px;
+  margin           : 15px;
+  color            : #ffff;
+  border           : none;
+  border-radius    : 2px;
+  background-color : var(--s-light);
+  box-shadow       : 10px 10px 15px #cccccc;
+  align-items      : center;
+  font-size        : 20px;
+  justify-content  : center;
+}
+
+.button-class a {
+  color           : #ffff;
+  text-decoration : none;
+}
+
+.button-class:hover {
+  color            : var(--p-light);
+  background-color : var(--secondary);
+}
+
+.buttons-align {
+  display        : flex;
+  width          : 100%;
+  flex-direction : row;
+}
+
+.button-danger {
+  background-color : var(--secondary);
+}
+
+.form-class {
+  display        : flex;
+  margin-left    : 10%;
+  flex-direction : column;
+}
+
+.input-blog {
+  display        : flex;
+  width          : 50%;
+  margin         : 15px;
+  padding        : 15px;
+  border         : none;
+  border-radius  : 2px;
+  background     : var(--s-light);
+  box-shadow     : 10px 10px 15px #cccccc;
+  flex-direction : column;
+}
+
+.input-blog input,
+textarea {
+  margin           : 15px;
+  padding          : 15px;
+  border           : none;
+  border-radius    : 2px;
+  background-color : var(--p-light);
+}
+
+.container {
+  display               : grid;
+  margin                : 10px 10%;
+  grid-template-columns : 1fr 1fr;
+  grid-template-rows    : 1fr;
+}
+
+.post-container-header {
+  margin                  : 15px 15px 0px 15px;
+  padding                 : 15px;
+  color                   : var(--p-light);
+  border-top-left-radius  : 2px;
+  border-top-right-radius : 2px;
+  background-color        : var(--s-light);
+  box-shadow              : 10px 10px 15px #cccccc;
+  /* background:linear-gradient(180deg, var(--s-light) 1%, var(--p-light)); */
+}
+
+.post-container-header a {
+  color           : var(--p-light);
+  text-decoration : none;
+}
+
+.post-container-content {
+  margin     : 0px 15px 15px 15px;
+  padding    : 15px;
+  background : var(--p-light);
+  box-shadow : 10px 10px 15px #cccccc;
+  /* border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; */
+}
+
+.post-date {
+  text-align : right;
+  font-size  : 15px;
+}
