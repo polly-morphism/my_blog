@@ -8,8 +8,10 @@
   --s-light   : #ff8a50;
 }
 
-body > div {
-  margin-top       : 102px;
+
+body {
+  height: 100vh;
+  padding-top       : 102px;
   margin-left      : 0px;
   background-color : var(--primary);
   font             : 20px Courier New;
@@ -139,7 +141,6 @@ textarea {
 
 .container {
   display               : grid;
-  margin                : 10px 10%;
   grid-template-columns : 1fr 1fr;
   grid-template-rows    : 1fr;
 }

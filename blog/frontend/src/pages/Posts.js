@@ -24,24 +24,24 @@ class Posts extends React.Component {
 
     render() {
         return (
-            <div className="post-conteiner-line">
-                {this.state.loaded ?
-                    this.state.posts.map(post =>
-                        <React.Fragment>
-                            <div className="post-container-header">
-                              <Link to={'/'+post.id}>{post.title}</Link>
-                            </div>
-                            <div className="post-container-content">
-                              {post.content}
-                              <div className="post-date">
-                                {post.created_at}
-                              </div>
-                            </div>
-                        </React.Fragment>
-                    ):
+            <div class="container">
+                <div className="post-conteiner-line">
+                    {this.state.loaded ?
+                        this.state.posts.map(post =>
+                            <React.Fragment>
+                                <div className="post-container-header">
+                                    <Link to={'/'+post.id}>{post.title}</Link>
+                                </div>
+                                <div className="post-container-content">
+                                    {post.content}
+                                    <div className="post-date">
+                                        {post.created_at}
+                                    </div>
+                                </div>
+                            </React.Fragment>
+                        ):
                     <p>Loading</p>}
-
-
+                </div>    
             </div>
         )
     }

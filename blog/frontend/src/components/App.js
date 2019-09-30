@@ -11,12 +11,10 @@ import Header from './Header'
 const App = () => (
     <Router>
         <Header/>
-        <div className="container">
             <Switch>
                 <Route path="/" exact component={Posts} />
                 <Route path="/:id" component={Post} />
             </Switch>
-        </div>
     </Router>
 );
 

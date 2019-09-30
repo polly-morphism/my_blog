@@ -4,21 +4,30 @@ from django.urls import reverse
 from django.shortcuts import get_object_or_404
 from .models import BlogPost
 from .forms import BlogPostForm, BlogPostDeleteForm, BlogPostUpdateForm
-
+from django.conf import settings
 from django.http import Http404
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from .serializers import BlogPostSerializer
-
+from django.conf import settings
+from rest_framework.settings import api_settings
 
 class BlogPostListREST(APIView):
     """
     REST List all posts, or create a new post.
     """
+    queryset = BlogPost.objects.all()
+    serializer_class = BlogPostSerializer
+    pagination_class = api_settings.DEFAULT_PAGINATION_CLASS
+
     def get(self, request, format=None):
         blogposts = BlogPost.objects.all()
         serializer = BlogPostSerializer(blogposts, many=True)
+        page = self.paginate_queryset(self.queryset)
+        if page is not None:
+            serializer = self.serializer_class(page, many=True)
+            return self.get_paginated_response(serializer.data)
         return Response(serializer.data)
 
     def post(self, request, format=None):
@@ -27,6 +36,34 @@ class BlogPostListREST(APIView):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    @property
+    def paginator(self):
+        """
+        The paginator instance associated with the view, or 'None'.
+        """
+        if not hasattr(self, '_paginator'):
+            if self.pagination_class is None:
+                self._paginator = None
+            else:
+                self._paginator = self.pagination_class()
+        return self._paginator
+
+    def paginate_queryset(self, queryset):
+        """
+        Return a single page of results, or 'None' if pagination is disabled.
+        """
+        if self.paginator is None:
+            return None
+        return self.paginator.paginate_queryset(queryset, self.request, view=self)
+
+    def get_paginated_response(self, data):
+        """
+        Return a paginated style 'Response' object for the given output data.
+        """
+        assert self.paginator is not None
+        return self.paginator.get_paginated_response(data)
+
 
 
 class BlogPostDetailREST(APIView):
