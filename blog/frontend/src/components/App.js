@@ -5,14 +5,14 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import "../css/blog.css"
 
-import { Post, Posts } from '../pages'
-import Header from './Header'
+import { Post, Posts, Main } from '../pages'
+// import Header from './Header'
 
 const App = () => (
     <Router>
-        <Header/>
             <Switch>
-                <Route path="/" exact component={Posts} />
+                <Route path="/posts" exact component={Posts} />
+                <Route path="/" exact component={Main} />
                 <Route path="/:id" component={Post} />
             </Switch>
     </Router>
