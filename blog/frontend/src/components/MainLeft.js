@@ -1,15 +1,19 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { Link } from "react-router-dom";
+
 
 const MainLeft = ({match}) => (
     <div className="left-side">
         <div className="main-text">
-        Text
+        Welcome
         </div>
         <div className="links-list">
-        Links
         <Link to="/posts/">
-        Posts
+        <li>Posts</li>
+        </Link>
+        <Link to="/posts/create/">
+        <li>Create a post!</li>
         </Link>
         </div>
     </div>
