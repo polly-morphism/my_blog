@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Link } from "react-router-dom";
+import PostCreate from "../components/Posts/PostCreate"
+import PostList from "../components/Posts/PostList"
 
 class Posts extends React.Component {
     constructor(props) {
@@ -39,8 +41,8 @@ class Posts extends React.Component {
 
     render() {
         return (
-            <div className="container">
-                <div className="post-conteiner-line">
+            <div className="main-page">
+                <div className="post-list">
                     {this.state.loaded ?
                         this.state.posts.map(post =>
                             <React.Fragment>
@@ -56,8 +58,9 @@ class Posts extends React.Component {
                             </React.Fragment>
                         ):
                     <p>Loading</p>}
+                    <button onClick={ this.handleNewData } class="button-scroll"><span>Next</span></button>
                 </div>
-                <button onClick={ this.handleNewData }> Next </button>
+                <PostCreate/>
             </div>
         )
     }

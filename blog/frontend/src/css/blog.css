@@ -1,35 +1,105 @@
 @import url('https://fonts.googleapis.com/css?family=Dancing+Script|Raleway&display=swap');
 
+:root {
+  --dark-brown : #21221D;
+  --dark-green : #2E4C40;
+  --mustard    : #9D894A;
+  --blue-grey  : #8FA6AE;
+}
+
 .main-page {
-    font-family: 'Raleway', sans-serif;
-    display: flex;
-    flex-direction: row;
-    flex: 1;
+  display        : flex;
+  font-family    : 'Raleway',
+                   sans-serif;
+  flex           : 1;
+  flex-direction : row;
 }
+
 .left-side {
-    font-size: 20px;
-    padding-top: 20px;
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-
+  display        : flex;
+  width          : 50%;
+  padding-top    : 20px;
+  overflow-y     : scroll;
+  font-size      : 20px;
+  flex-direction : column;
 }
-.right-side {
-    /* background-image: url("./static/frontend/images/rightbackground.jpg"); */
-    width: 50%;
-    display: flex;
-    flex-direction: column;
 
+.right-side {
+  /* background-image: url("images/rightbackground.jpg"); */
+  z-index        : 1;
+  display        : flex;
+  position       : fixed;
+  top            : 0;
+  right          : 0;
+  width          : 50%;
+  flex-direction : column;
+  /* Fixed Sidebar (stay in place on scroll) */
+  /* Stay on top */
+  /* Stay at the top */
+}
+
+.create-post {
+  /* background-image: url("images/rightbackground.jpg"); */
+  z-index        : 1;
+  display        : flex;
+  position       : fixed;
+  top            : 0;
+  right          : 0;
+  width          : 50%;
+  flex-direction : column;
+  /* Fixed Sidebar (stay in place on scroll) */
+  /* Stay on top */
+  /* Stay at the top */
+}
+
+.post-list {
+  display        : flex;
+  width          : 50%;
+  padding        : 30px;
+  overflow-y     : scroll;
+  font-size      : 20px;
+  flex-direction : column;
 }
 
 .main-text {
-    font-family: 'Dancing Script', cursive;
-    color: #184E3D;
-    font-size: 60px;
-    align-self: center;
-    padding: 10px;
+  padding     : 10px;
+  color       : #184E3D;
+  align-self  : center;
+  font-family : 'Dancing Script',
+                cursive;
+  font-size   : 60px;
+}
+
+.create-text {
+  padding     : 10px;
+  color       : white;
+  align-self  : center;
+  font-family : 'Dancing Script',
+                cursive;
+  font-size   : 60px;
 }
 
 .links-list {
-    padding-left: 10%
+  padding-left : 10%;
+}
+
+/* buttons */
+
+.button-scroll {
+  display          : inline-block;
+  width            : 150px;
+  margin           : 4px 2px;
+  padding          : 16px 32px;
+  color            : white;
+  border           : none;
+  background-color : var(--dark-green);
+  text-align       : center;
+  text-decoration  : none;
+  font-size        : 16px;
+  transition       : 0.3s;
+  cursor           : pointer;
+}
+
+.button-scroll:hover {
+  background-color: var(--mustard);
 }
