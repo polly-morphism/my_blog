@@ -25,7 +25,9 @@
 }
 
 .right-side {
-  /* background-image: url("images/rightbackground.jpg"); */
+  background-image: url("http://127.0.0.1:8000/media/rightbackground.jpg");
+  background-size: cover;
+  height         : 100%;
   z-index        : 1;
   display        : flex;
   position       : fixed;
@@ -39,7 +41,9 @@
 }
 
 .create-post {
-  /* background-image: url("images/rightbackground.jpg"); */
+  background-image: url("http://127.0.0.1:8000/media/rightbackground.jpg");
+  background-size: cover;
+  height         : 100%;
   z-index        : 1;
   display        : flex;
   position       : fixed;

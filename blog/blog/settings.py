@@ -123,11 +123,14 @@ USE_L10N = True
 USE_TZ = True
 
 #
-# STATICFILES_DIRS = (
-#      os.path.join(BASE_DIR, 'static'),
-# )
-# STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static')
+STATICFILES_DIRS = (
+     os.path.join(BASE_DIR, 'static'),
+)
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static')
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
+# STATIC_ROOT = 'http://127.0.0.1:8000/static/'
 STATIC_URL = '/static/'
+MEDIA_ROOT  = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
