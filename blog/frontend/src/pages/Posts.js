@@ -50,15 +50,20 @@ class Posts extends React.Component {
                                     <Link to={'/'+post.id}>{post.title}</Link>
                                 </div>
                                 <div className="post-container-content">
+                                {post.photo &&
+                                    <div className="post-photo">
+                                        <img className="bwimg" src={"http://127.0.0.1:8000"+post.photo}/>
+                                    </div>
+                                }
                                     {post.content}
                                     <div className="post-date">
-                                        {post.created_at}
+                                        {new Date(post.created_at).toLocaleDateString('en-GB')}
                                     </div>
                                 </div>
                             </React.Fragment>
                         ):
                     <p>Loading</p>}
-                    <button onClick={ this.handleNewData } class="button-scroll"><span>Next</span></button>
+                    <button onClick={ this.handleNewData } className="button-scroll"><span>Next</span></button>
                 </div>
                 <PostCreate/>
             </div>

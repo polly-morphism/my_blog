@@ -9,6 +9,7 @@ class BlogPost(models.Model):
     slug = models.SlugField(null=True, blank=True)
     content = models.TextField(null = True, blank = True)
     created_at = models.DateTimeField(default=datetime.now, blank=True)
+    photo = models.ImageField(upload_to='blogposts', null = True, blank = True)
 
     def save(self, *args, **kwargs):
         self.created_at = str(datetime.now())

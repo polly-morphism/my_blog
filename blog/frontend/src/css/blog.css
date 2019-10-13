@@ -7,6 +7,10 @@
   --blue-grey  : #8FA6AE;
 }
 
+.bwimg {
+    filter: grayscale(100%);
+}
+
 .main-page {
   display        : flex;
   font-family    : 'Raleway',
@@ -51,9 +55,49 @@
   right          : 0;
   width          : 50%;
   flex-direction : column;
+  color: white;
+  align-items: center;
   /* Fixed Sidebar (stay in place on scroll) */
   /* Stay on top */
   /* Stay at the top */
+}
+
+.create-post-title {
+    margin-top: 30%;
+}
+
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin-bottom: 10px;
+  display: inline-block;
+  border: 0px;
+  border-radius: 0px;
+  background-color: rgba(255, 255, 255, 0.5);
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+input[type="file"] {
+    border: 0px;
+    background-color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 10px;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+textarea {
+  width: 70%;
+  height: 150px;
+  padding: 12px 20px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  border: 0px;
+  border-radius: 0px;
+  background-color: rgba(255, 255, 255, 0.5);
+  font-size: 16px;
+  resize: none;
 }
 
 .post-list {
@@ -68,6 +112,15 @@
 .main-text {
   padding     : 10px;
   color       : #184E3D;
+  align-self  : center;
+  font-family : 'Dancing Script',
+                cursive;
+  font-size   : 60px;
+}
+
+.create-post-text {
+  padding     : 10px;
+  color       : white;
   align-self  : center;
   font-family : 'Dancing Script',
                 cursive;
@@ -106,4 +159,10 @@
 
 .button-scroll:hover {
   background-color: var(--mustard);
+}
+
+.post-photo {
+    width: 30%;
+    margin: 10px;
+    float: left;
 }
